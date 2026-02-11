@@ -25,14 +25,18 @@ plt.show()
 # Fit line to see trend
 
 m, b = np.polyfit(df["hours_studied"], df["quiz_score"], 1)
-x = np.linespace(df["hours_studied"].min(), df["hours_studied"].max(), 100)
+x = np.linspace(df["hours_studied"].min(), df["hours_studied"].max(), 100)
 
+y = m*x + b
 
-
-                
-                
-                
-                
-                
-                
-                
+plt.figure(figsize=(7,4))
+plt.scatter(df["hours_studied"], df["quiz_score"], s=60, alpha=0.8, label="hours/score")
+plt.plot(x, y, linewidth=2, label="Trend", color="red")
+plt.title("Scatter with Trend Line")
+plt.xlabel("Hours Studied")
+plt.ylabel("Quiz Score")
+plt.legend()
+plt.grid(True, alpha=0.2)
+plt.tight_layout()
+plt.savefig("quiz_trend.png", dpi=600)
+plt.show()
