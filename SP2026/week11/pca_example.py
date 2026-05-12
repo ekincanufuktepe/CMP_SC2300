@@ -86,7 +86,7 @@ plt.plot(range(1, len(cumulative)+1), cumulative, marker='o')
 plt.xlabel=("Number of Components")
 plt.ylabel=("Cumulative Explained Variance")
 plt.title("Cumulative Explained Variance")
-#plt.axline(0, 8, linestyle="--")
+plt.axhline(0.8, linestyle="--")
 plt.show()
 
 # PCA Loadings
